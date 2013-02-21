@@ -1,0 +1,1356 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+body {
+	background-image: url(../images/bg_main.png);
+	background-color: #F1FAFF;
+	background-repeat: repeat-x;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.div-home-tropical {
+	background-image: url(../images/bg_home_tropical.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	height: 750px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+}
+.div-inside-tropical {
+	background-image: url(../images/bg_inside_torpical_citrus.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+}
+
+.div-home-lemonade {
+	background-image: url(../images/bg_home_lemonade.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	height: 750px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+	
+}
+.div-inside-lemonade {
+	background-image: url(../images/bg_inside_lemonade.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+}
+.div-inside-company {
+	background-image: url(../images/bg_inside_company.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+}
+.div-home-dragonfruit {
+	background-image: url(../images/bg_home_dragonfruit.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	height: 750px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+	
+}
+.div-inside-dragonfruit {
+	background-image: url(../images/bg_inside_dragonfruit.jpg);
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-width: 990px;
+}
+
+
+.header-navigation {
+	width: 990px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	height: 110px;
+	position: relative;
+}
+.header-navigation-links {
+	overflow: visible;
+	float: right;
+	width: 755px;
+	font-size: 12px;
+	height: 40px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+
+.header-navigation-logo {
+	width: 220px;
+	display: block;
+	background-image: url(../images/logo_wildwater.gif);
+	background-repeat: no-repeat;
+	height: 100px;
+	background-position: center top;
+	float: left;
+	margin-top: -12px;
+	margin-left: 12px;
+}
+.header-navigation-logo span {
+	display: none;	
+}
+.header-navigation-logo:hover {
+	width: 220px;
+	display: block;
+	background-image: url(../images/logo_wildwater_hover.gif);
+	background-repeat: no-repeat;
+	height: 100px;
+	background-position: center top;
+	float: left;
+}
+.header-navigation-logo:active {
+	width: 220px;
+	display: block;
+	background-image: url(../images/logo_wildwater_active.gif);
+	background-repeat: no-repeat;
+	height: 100px;
+	background-position: center top;
+	float: left;
+}
+
+
+.menu-top {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	overflow: auto;
+	padding-right: 23px;
+	float: left;
+	height: 40px;
+}
+
+
+.menu-top ul li {
+	float: left;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	overflow: visible;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+
+.menu-top ul li a.tropical {
+	-moz-box-shadow: 2px 1px 1px -1px #454545;
+	-webkit-box-shadow: 2px 1px 1px -1px #454545;
+	box-shadow: 2px 1px 1px -1px #454545;
+	background-color:#ffec64;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	border:1px solid #c0af1b;
+	display:inline-block;
+	color:#333333;
+	font-weight:normal;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffee66;
+	padding: 12px;
+	background-image: url(../images/bg_button_tropical.jpg);
+	}
+.menu-top ul li a.tropical:hover {
+	background-color:#ffab23;
+	background-image: url(../images/bg_button_tropical.jpg);
+	background-position: 0px -31px;
+}
+.menu-top ul li a.tropical:active {
+		background-color:#ffab23;
+	margin-top: 1px;
+}
+.menu-top ul li a.lemonade {
+	-moz-box-shadow: 2px 1px 1px -1px #454545;
+	-webkit-box-shadow: 2px 1px 1px -1px #454545;
+	box-shadow: 2px 1px 1px -1px #454545;
+	
+	background-color:#fcfcfc;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-weight:normal;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+	padding: 12px;
+	background-image: url(../images/bg_button_lemonade.jpg);
+	background-position: center top;
+}.menu-top ul li a.lemonade:hover {
+	background-color:#dfdfdf;
+	background-image: url(../images/bg_button_lemonade.jpg);
+	background-position: 0px -31px;
+
+}
+.menu-top ul li a.lemonade:active {
+	
+	background-color:#dfdfdf;
+	margin-top: 1px;
+}
+.menu-top ul li a.dragonfruit {
+	-moz-box-shadow: 2px 1px 1px -1px #454545;
+	-webkit-box-shadow: 2px 1px 1px -1px #454545;
+	box-shadow: 2px 1px 1px -1px #454545;
+
+
+
+	background-color:#dd2049;
+	-moz-border-radius:30px;
+	-webkit-border-radius:320px;
+	border-radius:30px;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-weight:normal;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #810e05;
+	padding: 12px;
+	background-image: url(../images/bg_button_dragonfruit.jpg);
+	background-position: center top;
+}
+.menu-top ul li a.dragonfruit:hover {
+	background-color:#bb0c1a;
+	background-position: 0px -31px;	
+}
+.menu-top ul li a.dragonfruit:active {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bb0c1a), color-stop(1, #dd2049) );
+	background:-moz-linear-gradient( center top, #bb0c1a 5%, #dd2049 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb0c1a', endColorstr='#dd2049');
+	background-color:#bb0c1a;
+	margin-top: 1px;
+}
+
+.div-company-contact {
+	display: block;
+	overflow: hidden;
+	float: left;
+	width: 460px;
+	position: absolute;
+	right: 1px;
+	margin: 0px;
+	padding-top: 15px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.div-company-contact ul li {
+	
+}
+.div-company-contact ul li a {
+	display: block;
+	color: #A5CD39;
+	text-decoration: none;
+	float: left;
+	font-weight: bold;
+	font-size: 12px;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.div-company-contact ul li a:hover {
+	display: block;
+	color: #FFFFFF;
+}
+.div-company-contact ul li a:active {
+	display: block;
+	color: #003300;
+}
+
+
+
+.div-company-contact ul li.company {
+	display: block;
+	height: 17px;
+	background-image: url(../images/icons_company_contact.gif);
+	background-repeat: no-repeat;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 23px;
+	font-size: 11px;
+	float: left;
+	overflow: visible;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.div-company-contact ul li.company:hover {
+	
+	
+	background-position: 0px -30px;
+}
+.div-company-contact ul li.company:active {
+	
+	
+	background-position: 0px -60px;
+}
+
+
+.div-company-contact ul li.contact {
+	display: block;
+	margin: 0px;
+	height: 17px;
+	background-image: url(../images/icons_company_contact.gif);
+	background-repeat: no-repeat;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 23px;
+	background-position: left -15px;
+	font-size: 11px;
+	float: left;
+}
+
+
+
+.div-company-contact ul li.contact:hover {
+	
+	background-position: left -46px;
+	
+}
+.div-company-contact ul li.contact:active {
+	
+	background-position: left -77px;
+	
+}
+
+.div-company-contact ul li.dealer {
+	display: block;
+	margin: 0px;
+	background-image: url(../images/icons_company_contact.gif);
+	background-repeat: no-repeat;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 23px;
+	background-position: left -97px;
+	font-size: 11px;
+	float: left;
+}
+
+.div-company-contact ul li.dealer:hover {
+
+	background-position: left -135px;
+	
+}
+.div-company-contact ul li.dealer:active {
+	
+
+	background-position: left -174px;
+	
+}
+
+.div-company-contact ul li.downloads {
+	display: block;
+	margin: 0px;
+	height: 17px;
+	background-image: url(../images/icons_company_contact.gif);
+	background-repeat: no-repeat;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 23px;
+	background-position: left -115px;
+	font-size: 11px;
+	float: left;
+}
+.div-company-contact ul li.downloads:hover {
+	
+	background-position: left -154px;
+	
+}
+.div-company-contact ul li.downloads:active {
+	
+	background-position: left -193px;
+	
+}
+.div-facebook-twitter {
+	width: 60px;
+	float: right;
+	margin-right: -12px;
+	margin-top: 5px;
+	position: absolute;
+	top: 70px;
+	right: 23px;
+	display: block;
+}
+.div-facebook-twitter ul li {
+	width: 29px;
+	float: left;
+	height: 29px;
+	display: block;
+}
+.div-facebook-twitter ul li a.facebook {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	display: block;
+}
+.div-facebook-twitter ul li a.facebook:hover {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	display: block;
+	background-position: 0px -30px;
+}
+.div-facebook-twitter ul li a.facebook:active {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	display: block;
+	background-position: 0px -60px;
+}
+
+
+
+.div-facebook-twitter ul li a.twitter {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	background-position: -33px 0px;
+	display: block;
+}
+.div-facebook-twitter ul li a.twitter:hover {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	background-position: -33px -30px;
+	display: block;
+}
+.div-facebook-twitter ul li a.twitter:active {
+	width: 29px;
+	float: left;
+	background-image: url(../images/icons_facebook_twitter.gif);
+	height: 29px;
+	background-position: -33px -60px;
+	display: block;
+}
+.div-middle-home {
+	width: 990px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 600px;
+}
+.div-inside {
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 990px;
+	
+}
+.div-inside-bottom-tropical{
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 990px;
+	background-image: url(../images/bg_image_bottom_inside_page.jpg);
+	background-position: center bottom;
+	padding-bottom: 100px;
+	min-height:700px;
+	
+}
+.div-inside-bottom-lemonade{
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 990px;
+	background-image: url(../images/bg_image_bottom_inside_page_lemonade.jpg);
+	background-position: center bottom;
+	padding-bottom: 100px;
+	min-height:700px;
+	
+}
+.div-inside-bottom-plain{
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 990px;
+	background-image: url(../images/bg_image_bottom_inside_plain.jpg);
+	background-position: center bottom;
+	padding-bottom: 30px;
+	min-height:100px;
+	
+}
+.div-inside-bottom-dragonfruit{
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 990px;
+	background-image: url(../images/bg_image_bottom_inside_page_dragonfruit.jpg);
+	background-position: center bottom;
+	padding-bottom: 100px;
+	min-height:700px;
+	
+}
+.div-inside-bottom-info {
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	width: 520px;
+}
+
+.div-middle-home-left-side {
+	width: 235px;
+	height: 600px;
+	float: left;
+}
+
+.div-middle-home-left-side-top {
+	width: 225px;
+	height: 300px;
+}
+.div-middle-home-left-side-bottom {
+	width: 225px;
+	height: 290px;
+}
+.div-middle-home-middle {
+	width: 225px;
+	height: 500px;
+	float: left;
+}
+.div-middle-home-middle.tropical {
+	width: 190px;
+	height: 555px;
+	float: left;
+	background-image: url(../images/pic_tropical_wildwater.png);
+	background-repeat: no-repeat;
+	margin-top: 45px;
+}
+
+.div-nutrition-info {
+	background-image: url(../images/pic_nutrition_info.png);
+	background-repeat: no-repeat;
+	background-position: 60px 50px;
+	height: 270px;
+}
+.div-nutrition-info2 {
+	background-image: url(../images/pic_nutrition_info2.png);
+	background-repeat: no-repeat;
+	background-position: 60px 50px;
+	height: 270px;
+}
+
+
+.spacer-home-features{
+	margin-top: 100px;
+	margin-right: 175px;
+		margin-left: 220px;
+	
+	}
+.div-features {
+	
+	float: left;
+	width: 360px;
+	
+}
+
+.div-features ul li {
+	float: left;
+	font-size: 12px;
+	line-height: 22px;
+	font-weight: bold;
+}
+
+.div-features ul li:before {
+	content:"";
+	height: 15px;
+	width: 15px;
+	display: block;
+	float: left;
+	background-image: url(../images/bullet-leaf.png);
+	background-position: 0px 0px;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+.div-features2 {
+	margin-top: 100px;
+	margin-right: 175px;
+	float: left;
+	width: 360px;
+	margin-left: 220px;
+	color: #FFF;
+}
+.div-features2 ul li {
+	float: left;
+	font-size: 12px;
+	line-height: 22px;
+	font-weight: bold;
+	color: #FFF;
+}
+.div-features2 ul li:before {
+	content:"";
+	height: 15px;
+	width: 15px;
+	display: block;
+	float: left;
+	background-image: url(../images/bullet-leaf.png);
+	background-position: 0px 0px;
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+
+
+#double li	{
+	width:50%;
+	margin-top: -4px;
+}
+#triple li	{ width:33.333%; }
+#quad li		{ width:25%; }
+#six li		{ width:16.666%; }
+.div-bottle-tropical-citrus-sm {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	margin-left: 50px;
+}
+.div-bottle-tropical-citrus-sm:hover {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	margin-left: 50px;
+	background-position: left -131px;
+}
+.div-bottle-tropical-citrus-sm:active {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	margin-left: 50px;
+	background-position: left -262px;
+}
+
+
+.div-bottle-lemonade-sm {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -58px 0px;
+}
+.div-bottle-lemonade-sm:hover {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -58px -131px;
+}
+.div-bottle-lemonade-sm:active {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -58px -262px;
+}
+
+
+.div-bottle-dragonfruit-sm {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -114px 0px;
+}
+.div-bottle-dragonfruit-sm:hover {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -114px -131px;
+}
+.div-bottle-dragonfruit-sm:active {
+	height: 124px;
+	width: 56px;
+	background-image: url(../images/pic_small_bottles.png);
+	float: left;
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-position: -114px -262px;
+}
+.div-seal-natural-flavour {
+	background-image: url(../images/seal_natural_flavours.png);
+	height: 160px;
+	width: 160px;
+	float: right;
+	right: 4px;
+	margin-right: 50px;
+	margin-top: 40px;
+}
+.div-seal-natural-flavour2 {
+	background-image: url(../images/seal_natural_flavours.png);
+	height: 160px;
+	width: 160px;
+	float: left;
+	margin-right: 50px;
+	position: absolute;
+}
+.button-black-large {
+	background-image: url(../images/bg_button_black.jpg);
+	height: 23px;
+	color: #FFF;
+	background-position: right top;
+	font-size: 18px;
+	text-decoration: none;
+	display: block;
+	width: 140px;
+	padding-top: 15px;
+	padding-right: 23px;
+	padding-bottom: 15px;
+	padding-left: 23px;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	border: 1px solid #000;
+	-moz-box-shadow: 2px 1px 1px -1px #454545;
+	-webkit-box-shadow: 2px 1px 1px -1px #454545;
+	box-shadow: 2px 1px 1px -1px #454545;
+	font-weight: bold;
+}
+.button-black-large:hover {
+	background-image: url(../images/bg_button_black.jpg);
+	
+	background-position: right -48px;
+	
+}
+.button-black-large:active {
+	margin-top: 1px;	
+	
+}
+.div-info-3-pics {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 300px;
+	padding-left: 200px;
+	font-size: 12px;
+	margin-top: -21px;
+}
+.div-info-3-pics-inside {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	font-size: 12px;
+	padding-top: 200px;
+	padding-left: 18px;
+}
+.div-link-home-inside {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	padding-top: 106px;
+	text-align: right;
+	padding-right: 110px;
+}
+.div-link-home-inside a {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	background-image: url(../images/icon_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 78px;
+	line-height: 18px;
+	text-decoration: none;
+	color: #1F1A20;
+}
+.div-link-home-inside a:hover {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	background-image: url(../images/icon_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 78px;
+	line-height: 18px;
+	text-decoration: none;
+	color: #666;
+}
+.div-link-home-inside a:active {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	background-image: url(../images/icon_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 78px;
+	line-height: 18px;
+	text-decoration: none;
+	color: #000;
+}
+
+
+.div-link-home-inside2 {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	padding-top: 106px;
+	text-align: right;
+	padding-right: 110px;
+}
+.div-link-home-inside2 a {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	background-image: url(../images/icon_arrow2.png);
+	background-repeat: no-repeat;
+	background-position: 78px;
+	line-height: 18px;
+	text-decoration: none;
+	color: #CCCCCC;
+}
+.div-link-home-inside2 a:hover {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	line-height: 18px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.div-link-home-inside2 a:active {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 12px;
+	text-align: right;
+	line-height: 18px;
+	text-decoration: none;
+	color: #CCCCCC;
+}
+
+
+
+
+
+
+
+.div-info-3-pics-columns {
+	display: block;
+	width: 55px;
+	font-size: 11px;
+	float: left;
+	text-align: center;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+#preload {
+	display: none;
+}
+.div-footer {
+	width: 900px;
+	height: 50px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+.div-footer.bg-footer {
+	width: 900px;
+	height: 50px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/divider.gif);
+}
+
+
+
+.div-footer ul {
+ list-style: none outside none; margin:0; padding: 0; text-align: center; 
+
+
+
+}
+.div-footer ul li {
+	margin: 0 10px; display: inline;
+  /*    margin: 0 auto;*/
+
+}
+
+
+.div-footer ul li a {
+	color: #333;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	
+}
+.div-footer ul li a:hover {
+	color: #999;
+}
+.div-footer ul li a:active {
+	color: #333;
+}
+
+.bg-footer {
+	width: 900px;
+	height: 30px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/divider.gif);
+	display: block;
+}
+.div-content-inside {
+	width: 700px;
+	float: right;
+	overflow: auto;
+	padding-right: 50px;
+}
+.div-content-header {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_tropical_citrus.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: 50px;
+}
+.div-content-header-lemonade {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_lemonade.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: 50px;
+}
+
+.div-content-header-dragonfruit {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_dragonfruit.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: 50px;
+}
+.div-content-header-company {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_company.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: 5px top;
+	margin-top: 50px;
+}
+.div-content-header-contact {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_contact.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: 5px top;
+	margin-top: 50px;
+}
+.div-content-header-dealer-locator {
+	width: 750px;
+	float: right;
+	background-image: url(../images/pic_heading_dealer_locator.png);
+	height: 160px;
+	background-repeat: no-repeat;
+	background-position: 5px top;
+	margin-top: 50px;
+}
+.div-content-large-paragraph {
+	width: 610px;
+	float: left;
+	height: 190px;
+	font-size: 22px;
+	color: #000;
+	padding-right: 80px;
+	padding-left: 20px;
+	overflow: auto;
+	line-height: 29px;
+}
+.div-content-company-paragraph {
+	width: 350px;
+	float: left;
+	font-size: 12px;
+	color: #000;
+	padding-right: 340px;
+	padding-left: 20px;
+	overflow: auto;
+	line-height: 18px;
+	background-image: url(../images/pic_family.jpg);
+	background-repeat: no-repeat;
+	background-position: 375px top;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.div-content-company-paragraph h3 {
+	font-size: 16px;
+	color: #000;
+	overflow: auto;
+	line-height: 18px;
+	padding-bottom: 20px;
+}
+
+.div-content-company-paragraph2 {
+	width: 690px;
+	float: left;
+	font-size: 14px;
+	color: #000;
+	padding-left: 20px;
+	overflow: hidden;
+	line-height: 18px;
+	background-image: url(../images/pic_wildwater_flavours.jpg);
+	background-repeat: no-repeat;
+	background-position: 450px 100px;
+	padding-bottom: 40px;
+}
+.div-content-company-paragraph3 {
+	width: 640px;
+	float: left;
+	font-size: 14px;
+	color: #000;
+	overflow: hidden;
+	line-height: 22px;
+	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 50px;
+}
+.div-content-company-paragraph3 h1 {
+	font-size: 45px;
+	color: #519500;
+	line-height: 50px;
+	
+}
+.div-content-company-paragraph3 h3 {
+	font-size: 25px;
+	color: #666666;
+}
+
+.div-content-company-paragraph3 p {
+	font-size: 14px;
+	color: #333333;
+}
+
+.div-content-company-paragraph2 ul li {
+	font-size: 23px;
+	color: #000;
+	padding-left: 45px;
+	overflow: visible;
+	line-height: 28px;
+	padding-top: 23px;
+	background-image: url(../images/tick_green_large.png);
+	background-repeat: no-repeat;
+	background-position: 0px 20px;
+	clear: both;
+}
+.div-content-company-paragraph2 ul li.leaf {
+	font-size: 18px;
+	color: #000;
+	padding-left: 45px;
+	overflow: visible;
+	line-height: 34px;
+	padding-top: 23px;
+	background-image: url(../images/leaf_green_large.png);
+	background-repeat: no-repeat;
+	background-position: 0px 22px;
+	clear: both;
+}
+
+
+
+
+.div-content-company-paragraph2 h1 {
+	width: 640px;
+	font-size: 28px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	font-weight: normal;
+	
+}
+.div-content-contact-paragraph {
+	width: 350px;
+	float: left;
+	font-size: 12px;
+	color: #000;
+	padding-right: 340px;
+	padding-left: 20px;
+	overflow: auto;
+	line-height: 18px;
+	background-image: url(../images/pic_contact.png);
+	background-repeat: no-repeat;
+	background-position: 320px top;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.div-content-dealer-locator-paragraph {
+	width: 670px;
+	float: left;
+	font-size: 12px;
+	color: #000;
+	padding-left: 20px;
+	overflow: auto;
+	line-height: 18px;
+	background-repeat: no-repeat;
+	background-position: 320px top;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.div-content-contact-paragraph ul li{
+	padding-left: 34px;
+	font-size: 15px;
+	line-height: 26px;
+	
+
+}
+.div-content-contact-paragraph ul li.phone {
+	padding-left: 34px;
+	background-image: url(../images/icons_contact.png);
+	background-repeat: no-repeat;
+	background-position: -4px 0px;
+}
+.div-content-contact-paragraph ul li.mail {
+	padding-left: 34px;
+	background-image: url(../images/icons_contact.png);
+	background-repeat: no-repeat;
+	background-position: -4px -21px;
+}
+
+
+.div-content-paragraphs {
+	width: 650px;
+	float: right;
+	font-size: 12px;
+	padding-right: 80px;
+	padding-left: 20px;
+	line-height: 22px;
+}
+.div-content-yellow-strip {
+	width: 580px;
+	font-size: 12px;
+	color: #000;
+	padding-right: 80px;
+	padding-left: 50px;
+	background-repeat: no-repeat;
+	float: left;
+	padding-top: 40px;
+}
+.div-vitamins {
+	height: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	overflow: visible;
+	width: 710px;
+	float: left;
+	padding-left: 23px;
+}
+.div-vitamins h1 {
+	height: 60px;
+	font-size: 54px;
+	float: left;
+}
+.div-vitamins h2 {
+	font-size: 34px;
+	float: left;
+	line-height: 67px;
+	padding-left: 23px;
+}
+.div-bg-green {
+	background-image: url(../images/bg_green.png);
+	background-color: #487A14;
+	border-radius: 10px;
+	padding: 20px;
+	color: #FFF;
+	line-height: 24px;
+	margin-top: 23px;
+	margin-left: -42px;
+}
+.div-dots {
+	background-image: url(../images/div_dots.png);
+	height: 15px;
+	width: 280px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.color-yellow {
+	color: #F0C600;
+}
+.color-green {
+	color: #549601;
+}
+.color-light-green {
+	color: #C8FE85;
+}
+
+.color-red {
+	color: #CC0033;
+}
+.color-grey {
+	color: #666666;
+}
+.color-white {
+	color: #FFFFFF;!important
+}
+
+.txt-small {
+	font-size: 11px;
+}
+.link-green {
+	color: #5E8E29;
+}
+.link-green:hover {
+	color: #72AB32;
+}
+.link-green:active {
+	color: #507823;
+}
+.div-map {
+	background-image: url(../images/pic_map.png);
+	height: 191px;
+	width: 162px;
+}
+
+
+
+.clear {
+	clear: both;
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+h3 {
+	font-size: 17px;
+}
+
+::selection {
+	background: #448e00; /* Safari */
+	color:#FFF;
+	text-shadow:none;!important
+	}
+::-moz-selection {
+	background: #448e00; /* Firefox */
+	color:#FFF;
+		text-shadow:none;!important
+	}
+
+dl, dt, dl { margin:0;padding:0; }
+
+dt			{
+	color:#4B7B15;
+	font-weight:bold;
+	margin-bottom:12px;
+	cursor:pointer;
+	line-height:20px;
+	font-size: 18px;
+	margin-top: 12px;
+	background-image: url(../images/bullet-leaf.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding-left: 22px;
+}
+dt:hover	{
+	color: #4C9100;
+}
+dt.open		{
+
+}
+dt.open:hover	{
+}
+dd			{
+	padding-left: 23px;
+}
+dd *:first-child	{ margin-top:0;padding-top:0;}

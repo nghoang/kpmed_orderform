@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wild-Water&#153; - Drink Smart</title>
+    <link href="css/global.css" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+<link rel="stylesheet" href="css/queryLoader.css" type="text/css" />
+<script type='text/javascript' src='js/queryLoader.js'></script>
+    
+    <script language="javascript" type="text/javascript">
+
+
+   
+    function changeDivImageTropical()
+    {
+
+        document.getElementById("bg-lemonade").style.backgroundImage = "url(images/bg_home_tropical.jpg)";
+        document.getElementById('pic-text1').innerHTML = 'Gym';
+		document.getElementById('pic-text2').innerHTML = 'Office';
+      	document.getElementById('pic-text3').innerHTML = 'On the Go!';
+		document.getElementById("features").style.color="black"
+	    document.getElementById("nutritioninfo").style.backgroundImage = "url(images/pic_nutrition_info.png)";
+		document.getElementById("link").href="tropical_citrus_flavour.html"
+
+        
+    }
+	function changeDivImageLemonade()
+    {
+        	
+
+        document.getElementById("bg-lemonade").style.backgroundImage = "url(images/bg_home_lemonade.jpg)";
+       	document.getElementById("nutritioninfo").style.backgroundImage = "url(images/pic_nutrition_info2.png)";
+		document.getElementById('pic-text1').innerHTML = 'Party';
+		document.getElementById('pic-text2').innerHTML = 'Fitness Activity';
+      	document.getElementById('pic-text3').innerHTML = 'Office';
+		document.getElementById("features").style.color="white"
+		document.getElementById("link").href="lemonade_flavour.html"
+
+    }
+		
+		function changeDivImageDragonfruit()
+    {
+        
+        document.getElementById("bg-lemonade").style.backgroundImage = "url(images/bg_home_dragonfruit.jpg)";
+       	document.getElementById('pic-text1').innerHTML = 'Outdoors';
+		document.getElementById('pic-text2').innerHTML = 'Workout';
+      	document.getElementById('pic-text3').innerHTML = 'Sports';
+    	document.getElementById("features").style.color="white"
+       	document.getElementById("nutritioninfo").style.backgroundImage = "url(images/pic_nutrition_info.png)";
+    	document.getElementById("link").href="dragonfruit_flavour.html"
+
+	}
+    </script>
+
+    <body>
+    <div class="div-home-lemonade" id="bg-lemonade">
+      <div class="header-navigation">
+       <a href="index.html"><h1><div class="header-navigation-logo" title="Wild-Water&#153; vitam-in-water"><span>Wild-Water&#153; vitam-in-water</span></div></h1></a>
+        <div class="header-navigation-links">
+          <div class="menu-top">
+            <ul>
+              <li ><a onclick="changeDivImageTropical()"  href="#" class="tropical">Tropical Citrus</a></li>
+              <li ><a onclick="changeDivImageLemonade()"  href="#" class="lemonade">Lemonade</a></li>
+              <li ><a onclick="changeDivImageDragonfruit()"  href="#"  class="dragonfruit">Dragonfruit</a></li>
+            </ul>
+          </div>
+          <div class="div-company-contact">
+            <ul>
+              <li class="company"><a href="company.html">Company</a></li>
+              <li class="company"><a href="faqs.html">FAQ's</a></li>
+              <li class="contact"><a href="contact.html">Contact</a></li>
+              <li class="dealer"><a href="dealer_locator.html">Dealer Locator</a></li></ul>
+            <ul>
+              <li class="dealer"><a href="online_order.html">Online Order</a></li>
+            </ul>
+          </div>
+          <div class="div-facebook-twitter">
+            <ul>
+              <li><a class="facebook" title="Facebook" href="http://www.facebook.com/wildwaterindia"></a></li>
+              <li><a class="twitter" title="Twitter" href="http://twitter.com/wildwaterindia"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="div-middle-home" >
+        <div class="div-middle-home-left-side">
+          <div class="div-middle-home-left-side-top">
+            <div class="div-nutrition-info2" id="nutritioninfo"></div>
+          </div>
+          <a href="#" onclick="changeDivImageTropical()">
+          <div class="div-bottle-tropical-citrus-sm"></div>
+          </a> <a href="#" onclick="changeDivImageLemonade()">
+          <div class="div-bottle-lemonade-sm"></div>
+          </a> <a href="#"  onclick="changeDivImageDragonfruit()">
+          <div class="div-bottle-dragonfruit-sm"></div>
+          </a> </div>
+        <div class="div-seal-natural-flavour"></div>
+        <div class="div-features spacer-home-features color-white" id="features">
+          <ul id="double">
+            <li>100% Natural Flavour</li>
+            <li>Vitamin enriched</li>
+            <li>100% Natural Colour</li>
+            <li>No Preservative</li>
+            <li>100% Natural Sweetener</li>
+            <li>Low Sugar<br />
+            </li>
+          </ul>
+          <p>&nbsp;</p>
+          <ul>
+            <br />
+            <br />
+            <a id="link" href="lemonade_flavour.html" class="button-black-large spacer-top-20px">Learn more</a>
+          </ul>
+        </div>
+      </div>
+      <div class="div-info-3-pics">
+        <div id="pic-text1" class="div-info-3-pics-columns">Party</div>
+        <div id="pic-text2" class="div-info-3-pics-columns">Fitness Activity</div>
+        <div id="pic-text3" class="div-info-3-pics-columns">Office</div>
+      </div>
+    </div>
+    <div class="div-footer">
+      <div class="bg-footer"></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tropical_citrus_flavour.html">Tropical Citrus</a></li>
+        <li><a href="lemonade_flavour.html">Lemonade</a></li>
+        <li><a href="dragonfruit_flavour.html">Dragonfruit</a></li>
+        <li><a href="company.html">Company </a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faqs.html">FAQ's</a> </li>
+        <li><a href="online_order.html">Online Order</a></li>
+        <li><a href="dealer_locator.html">Dealer Locator</a></li>
+        <span class="txt-small color-grey clear">©  Copyright 2012 drinkwildwater.com </span>
+      </ul>
+    </div>
+    <div class="div-home-tropical" style="display:none;"></div>
+     <div class="div-home-dragonfruit" style="display:none;"></div>
+    <div class="div-home-lemonade" style="display:none;"></div>
+</body>
+</html>
