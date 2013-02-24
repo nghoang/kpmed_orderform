@@ -57,6 +57,13 @@ function ProcessOrder()
 		return -1;
 	}
 	
+	if ($product1Check != '1')
+		$product1Count = 0;
+	if ($product2Check != '1')
+		$product2Count = 0;
+	if ($product3Check != '1')
+		$product3Count = 0;
+	
 	if (empty($firstname) ||
 		empty($lastname) ||
 		empty($email) ||
@@ -128,6 +135,8 @@ function ProcessOrder()
         color:#555 !important;
         font-family:'Lucida Grande',' Lucida Sans Unicode',' Lucida Sans',' Verdana',' Tahoma',' sans-serif';
         font-size:14px;
+        float: left;
+        float: left;
     }
 .form-line1 {        padding-top:12px;
         padding-bottom:12px;
