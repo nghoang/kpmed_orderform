@@ -5,8 +5,11 @@ $error_message = "";
 
 if (isset($_POST["smOrder"])){
 	$orderid = ProcessOrder();
-	header("Location: invoice.php?oid={$orderid}");
-	die();
+	if ($orderid != -1)
+	{
+		header("Location: invoice.php?oid={$orderid}");
+		die();
+	}
 }
 
 
@@ -29,22 +32,9 @@ function ProcessOrder()
 	$landline = $_POST["landline"];
 	$zip = $_POST["zip"];
 	$country = $_POST["country"];
-	$obile = $_POST["mobile"];
+	$mobile = $_POST["mobile"];
 	$agree_pay = $_POST["agree_pay"];
 	$agree_term = $_POST["agree_term"];
-	
-	if (empty($agree_pay))
-	{
-		$error_message = "Do you agree to pay cash on delivery?";
-		return -1;
-	}
-	
-	
-	if (empty($agree_term))
-	{
-		$error_message = "Do you agree to the terms and condition?";
-		return -1;
-	}
 	
 	if ($product1Check != '1' &&
 		$product2Check != '1' &&
@@ -74,6 +64,19 @@ function ProcessOrder()
 		empty($country))
 	{
 		$error_message = "Please enter all required fields";
+		return -1;
+	}
+	
+	if (empty($agree_pay))
+	{
+		$error_message = "Do you agree to pay cash on delivery?";
+		return -1;
+	}
+	
+	
+	if (empty($agree_term))
+	{
+		$error_message = "Do you agree to the terms and condition?";
 		return -1;
 	}
 	
