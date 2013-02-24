@@ -1,4 +1,99 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+require_once "config.php";
+
+$error_message = "";
+
+if (isset($_POST["smOrder"])){
+	$orderid = ProcessOrder();
+	header("Location: invoice.php?oid={$orderid}");
+	die();
+}
+
+
+function ProcessOrder()
+{
+	global $error_message;
+	$product1Count = $_POST["product_1_count"];
+	$product2Count = $_POST["product_2_count"];
+	$product3Count = $_POST["product_3_count"];
+	$product1Check = $_POST["product_1_check"];
+	$product2Check = $_POST["product_2_check"];
+	$product3Check = $_POST["product_3_check"];
+	$firstname = $_POST["firstname"];
+	$lastname = $_POST["lastname"];
+	$email = $_POST["email"];
+	$address1 = $_POST["address1"];
+	$address2 = $_POST["address2"];
+	$city = $_POST["city"];
+	$state = $_POST["state"];
+	$landline = $_POST["landline"];
+	$zip = $_POST["zip"];
+	$country = $_POST["country"];
+	$obile = $_POST["mobile"];
+	$agree_pay = $_POST["agree_pay"];
+	$agree_term = $_POST["agree_term"];
+	
+	if (empty($agree_pay))
+	{
+		$error_message = "Do you agree to pay cash on delivery?";
+		return -1;
+	}
+	
+	
+	if (empty($agree_term))
+	{
+		$error_message = "Do you agree to the terms and condition?";
+		return -1;
+	}
+	
+	if ($product1Check != '1' &&
+		$product2Check != '1' &&
+		$product3Check != '1' || 
+		$product1Count <= 0 &&  
+		$product2Count <= 0 &&  
+		$product3Count <= 0)
+	{
+		$error_message = "Please select a product";
+		return -1;
+	}
+	
+	if (empty($firstname) ||
+		empty($lastname) ||
+		empty($email) ||
+		empty($address1) ||
+		empty($city) ||
+		empty($state) ||
+		empty($zip) ||
+		empty($country))
+	{
+		$error_message = "Please enter all required fields";
+		return -1;
+	}
+	
+	$ID = uniqid();
+	mysql_query("INSERT INTO `order` SET 
+		 order_id='{$ID}',
+		 item_1_count='{$product1Count}',
+		 item_2_count='{$product2Count}',
+		 item_3_count='{$product3Count}',
+		 item_1_price='100',
+		 item_2_price='200',
+		 item_3_price='300',
+		 first_name='{$firstname}',
+		 last_name='{$lastname}',
+		 address1='{$address1}',
+		 address2='{$address2}',
+		 city='{$city}',
+		 state='{$state}',
+		 landline='{$landline}',
+		 mobile='{$mobile}',
+		 email='{$email}',
+		 zip='{$zip}',
+		 country='{$country}'");
+	return $ID;
+}
+
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,6 +107,7 @@
       $('input_5').hint('ex: myname@example.com');
    });
 </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link href="http://max.jotfor.ms/min/g=formCss?3.1.1156" rel="stylesheet" type="text/css" />
 <link type="text/css" rel="stylesheet" href="http://jotform.us/css/styles/nova.css?3.1.1156" />
 <style type="text/css">
@@ -95,15 +191,20 @@ function dynamicFaq(){
           <h3>Payment on delivery, No credit card needed!</h3>
           <strong><br />
           </strong>
-          <form class="jotform-form" action="http://submit.jotform.us/submit/23558241760151/" method="post" name="form_23558241760151" id="23558241760151" accept-charset="utf-8">
+          <form class="jotform-form" method="post" >
             <input type="hidden" name="formID" value="23558241760151" />
   <div class="form-all">
+  	<?php
+  	if ($error_message != "")
+  		echo "<div style=\"color: red;\">*{$error_message}</div>";
+  	?>
     <ul class="form-section">
       <li class="form-line" id="id_3">
         <label class="form-label-left" id="label_3" for="input_3"> WildWater&#153; Flavours</label>
         <div id="cid_3" class="form-input"><span class="form-product-item">
         
-    <input type="number" style="width:40px;" value="1" />    <input class="form-checkbox" type="checkbox" id="input_3_1001" name="q3_myProducts3[][id]" value="1001" />
+    <input type="number" name="product_1_count" style="width:40px;" value="<?php echo isset($_POST["product_1_count"]) ? $_POST["product_1_count"] : "1";?>" />    
+    <input class="form-checkbox" type="checkbox" <?php echo isset($_POST["product_1_check"]) ? 'checked="checked"' : ""; ?> name="product_1_check" value="1" />
           </span><strong>
           <label for="input_3_1001"><span class="color-yellow">Tropical Citrus</span></label>
           </strong><span class="form-product-item"><strong>
@@ -115,7 +216,9 @@ function dynamicFaq(){
           </span>
           <br /><span class="form-product-item">
           
-        <input type="number" style="width:40px;" value="1" />  <input class="form-checkbox" type="checkbox" id="input_3_1002" name="q3_myProducts3[][id]" value="1002" />
+          
+        <input type="number" name="product_2_count" style="width:40px;" value="<?php echo isset($_POST["product_2_count"]) ? $_POST["product_2_count"] : "1";?>" />  
+        <input class="form-checkbox" type="checkbox" <?php echo isset($_POST["product_2_check"]) ? 'checked="checked"' : ""; ?> name="product_2_check" value="1" />
           </span><span class="color-green"><strong>Lemonade</strong></span><span class="form-product-item"><strong> flavour </strong>(8 In 1 Case)
 <label for="input_3_1002"><span class="form-product-details"><b>
                   *840
@@ -123,10 +226,10 @@ function dynamicFaq(){
                 </b></span>
           </label>
           </span>
-          <br /><span class="form-product-item"><input type="number" style="width:40px;" value="1" />
+          <br /><span class="form-product-item"><input type="number" name="product_3_count" style="width:40px;" value="<?php echo isset($_POST["product_3_count"]) ? $_POST["product_3_count"] : "1";?>" />
           
           
-          <input class="form-checkbox" type="checkbox" id="input_3_1003" name="q3_myProducts3[][id]" value="1003" />
+          <input class="form-checkbox" type="checkbox" <?php echo isset($_POST["product_3_check"]) ? 'checked="checked"' : ""; ?> name="product_3_check" value="1" />
             </span>
           <label for="input_3_1003"><span class="color-red"><strong>Dragonfruit </strong></span></label>
           <span class="form-product-item">
@@ -134,13 +237,10 @@ function dynamicFaq(){
           </label>
           </span>
           <br />
-          <br /><span class="form-payment-total"><b>
-              You Have Ordered Total:&nbsp;<span>$<span id="payment_total">0.00</span>
-                USD</span></span>
           <hr>
           <div id="cid_2" class="form-input-wide"> <span>
-              <input class="form-checkbox" type="checkbox" id="input_3_" name="input_3_" value="1002" />
-            </span> I agree to pay cash on delivery          </div>
+              <input class="form-checkbox" type="checkbox" id="input_3_" name="agree_pay" value="1" />
+            </span>* I agree to pay cash on delivery          </div>
           <table summary="" style="display:none" id="creditCardTable" class="form-address-table" border="0" cellpadding="0" cellspacing="0">
             <tr>
               <th colspan="2" align="left">
@@ -221,8 +321,8 @@ function dynamicFaq(){
               <td width="50%"><span class="form-sub-label-container"><input class="form-textbox form-address-postal" type="text" name="q3_myProducts3[postal]" id="input_3_postal" size="10" />
                   <label class="form-sub-label" for="input_3_postal" id="sublabel_postal"> Postal / Zip Code </label></span>
               </td>
-              <td><span class="form-sub-label-container"><select class="form-dropdown form-address-country" name="q3_myProducts3[country]" id="input_3_country">
-                    <option selected> Please Select </option>
+              <td><span class="form-sub-label-container"><select class="form-dropdown form-address-country"  id="input_3_country">
+                    <option value="" selected> Please Select </option>
                     <option value="United States"> United States </option>
                     <option value="Abkhazia"> Abkhazia </option>
                     <option value="Afghanistan"> Afghanistan </option>
@@ -477,14 +577,14 @@ function dynamicFaq(){
       <li class="form-line"><strong>
               Contact and Deliver Information </strong><br />
               <br />
-              <div id="cid_4" class="form-input"><span class="form-sub-label-container"><input class="form-textbox" type="text" size="10" name="q4_buyerName[first]" id="first_4" />
-          <label class="form-sub-label" for="first_4" id="sublabel_first"> First Name </label></span><span class="form-sub-label-container"><input class="form-textbox" type="text" size="15" name="q4_buyerName[last]" id="last_4" />
+              <div id="cid_4" class="form-input"><span class="form-sub-label-container"><input class="form-textbox" type="text" size="10" name="firstname" value="<?php echo (isset($_POST["firstname"]) ? $_POST["firstname"] : "");?>" id="first_4" />
+          <label class="form-sub-label" for="first_4" id="sublabel_first"> First Name </label></span><span class="form-sub-label-container"><input class="form-textbox" type="text" size="15" name="lastname" value="<?php echo (isset($_POST["lastname"]) ? $_POST["lastname"] : "");?>" id="last_4" />
             <label class="form-sub-label" for="last_4" id="sublabel_last"> Last Name </label></span>
     </div>
       </li>
       <li class="form-line" id="id_5">
         <div id="cid_5" class="form-input"><span class="form-sub-label-container">
-          <input class="form-textbox form-address-line" type="text" name="input_6_addr_line" id="input_6_addr_line3" />
+          <input class="form-textbox form-address-line" type="text" name="email" value="<?php echo (isset($_POST["email"]) ? $_POST["email"] : "");?>" id="input_6_addr_line3" />
           <label class="form-sub-label" for="input_6_addr_line3" id="sublabel_addr_line1"> Your Email </label>
         </span><span class="form-sub-label-container">
           </span> </div>
@@ -492,41 +592,41 @@ function dynamicFaq(){
       <li class="form-line" id="id_6">
         <div id="cid_6" class="form-input">
           <table summary="" class="form-address-table" border="0" cellpadding="0" cellspacing="0">
-            <tr>
-              <td colspan="2"><span class="form-sub-label-container"><input class="form-textbox form-address-line" type="text" name="q6_shippingAddress[addr_line1]" id="input_6_addr_line1" />
+            <tra
+              <td colspan="2"><span class="form-sub-label-container"><input class="form-textbox form-address-line" type="text" name="address1" value="<?php echo (isset($_POST["address1"]) ? $_POST["address1"] : "");?>" id="input_6_addr_line1" />
                   <label class="form-sub-label" for="input_6_addr_line1" id="sublabel_addr_line1"> Street Address </label></span>
               </td>
             </tr>
             <tr>
-              <td colspan="2"><span class="form-sub-label-container"><input class="form-textbox form-address-line" type="text" name="q6_shippingAddress[addr_line2]" id="input_6_addr_line2" size="46" />
+              <td colspan="2"><span class="form-sub-label-container"><input class="form-textbox form-address-line" type="text" name="address2"  value="<?php echo (isset($_POST["address2"]) ? $_POST["address2"] : "");?>" size="46" />
 
                   <label class="form-sub-label" for="input_6_addr_line2" id="sublabel_addr_line2"> Street Address Line 2 </label></span>
               </td>
             </tr>
             <tr>
               <td><span class="form-sub-label-container">
-                <input class="form-textbox form-address-city" type="text" name="input_6_city" id="input_6_city2" size="21" />
+                <input class="form-textbox form-address-city" type="text" name="city" value="<?php echo (isset($_POST["city"]) ? $_POST["city"] : "");?>" size="21" />
                 <label class="form-sub-label" for="input_6_city2" id="sublabel_city"> City </label>
               </span></td>
               <td><span class="form-sub-label-container">
-                <input class="form-textbox form-address-state" type="text" name="input_6_state" id="input_6_state2" size="22" />
+                <input class="form-textbox form-address-state" type="text"  name="state" value="<?php echo (isset($_POST["state"]) ? $_POST["state"] : "");?>" size="22" />
                 <label class="form-sub-label" for="input_6_state2" id="sublabel_state"> State / Province </label>
               </span></td>
             </tr>
             <tr>
-              <td width="50%"><span class="form-sub-label-container"><input class="form-textbox form-address-city" type="text" name="q6_shippingAddress[city]" id="input_6_city" size="21" />
+              <td width="50%"><span class="form-sub-label-container"><input class="form-textbox form-address-city" type="text"  name="landline" value="<?php echo (isset($_POST["landline"]) ? $_POST["landline"] : "");?>" size="21" />
                   <label class="form-sub-label" for="input_6_city" id="sublabel_city"> Landline</label></span>
               </td>
-              <td><span class="form-sub-label-container"><input class="form-textbox form-address-state" type="text" name="q6_shippingAddress[state]" id="input_6_state" size="22" />
+              <td><span class="form-sub-label-container"><input class="form-textbox form-address-state" type="text" name="mobile" value="<?php echo (isset($_POST["mobile"]) ? $_POST["mobile"] : "");?>" size="22" />
                   <label class="form-sub-label" for="input_6_state" id="sublabel_state"> Mobile</label></span>
               </td>
             </tr>
             <tr>
-              <td width="50%"><span class="form-sub-label-container"><input class="form-textbox form-address-postal" type="text" name="q6_shippingAddress[postal]" id="input_6_postal" size="10" />
+              <td width="50%"><span class="form-sub-label-container"><input class="form-textbox form-address-postal" type="text" name="zip" value="<?php echo (isset($_POST["zip"]) ? $_POST["zip"] : "");?>" size="10" />
                   <label class="form-sub-label" for="input_6_postal" id="sublabel_postal"> Postal / Zip Code </label></span>
               </td>
-              <td><span class="form-sub-label-container"><select class="form-dropdown form-address-country" name="q6_shippingAddress[country]" id="input_6_country">
-                    <option selected> Please Select </option>
+              <td><span class="form-sub-label-container"><select class="form-dropdown form-address-country" id="country" name="country">
+                    <option value="" selected> Please Select </option>
                     <option value="United States"> United States </option>
                     <option value="Abkhazia"> Abkhazia </option>
                     <option value="Afghanistan"> Afghanistan </option>
@@ -777,10 +877,10 @@ function dynamicFaq(){
             </tr>
           </table>
           <div id="cid_7" class="form-input-wide"> <span>
-              <input class="form-checkbox" type="checkbox" id="input_3_2" name="input_3_2" value="1002" />
+              <input class="form-checkbox" type="checkbox" id="input_3_2" name="agree_term" value="1" />
             </span>I agree to the terms and condition          </div>
           <div id="cid_" class="form-input-wide">
-<button id="input_" type="submit" class="form-submit-button"> Submit </button>
+<button id="input_" type="submit" name="smOrder" class="form-submit-button"> Submit </button>
           </div>
         </div>
       </li>
@@ -830,5 +930,8 @@ function dynamicFaq(){
              <span class="txt-small color-grey clear">©  Copyright 2012 drinkwildwater.com </span>
  </ul>
     </div>
+    <script>
+    $("#country").val("<?php echo isset($_POST["country"]) ? $_POST["country"] : ""; ?>");
+    </script>
 </body>
 </html>

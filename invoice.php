@@ -1,5 +1,12 @@
+<?php
+require_once "config.php";
+$ID = $_GET["oid"];
+$query = mysql_query("SELECT * FROM `order` WHERE order_id='{$ID}'");
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+if (!$query)
+	die("No Order");
+$o = mysql_fetch_object($query);
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -64,13 +71,30 @@ tr.odd {
   <div id="content">
     <p>
       <strong>Customer Details</strong><br />
-      Name: Last, First<br />
-      Email: customeremail@somewhere.com<br />
-      Payment Type: MasterCard    </p>
+      Name: <?php echo $o->first_name;?>, <?php echo $o->last_name;?><br />
+      Email: <?php echo $o->email;?><br />
+      Payment Type: Direct    </p>
     <hr>
+    <?php $total = 0;?>
     <table>
       <tr><td><strong>Description</strong></td><td><strong>Qty</strong></td><td><strong>Unit Price</strong></td><td><strong>Amount</strong></td></tr>
-      <tr class="odd"><td>Product 1</td><td>1</td><td>4.95</td><td>4.95</td></tr><tr class="even"><td>Product 2</td><td>1</td><td>4.95</td><td>4.95</td></tr><tr class="odd"><td>Product 3</td><td>1</td><td>4.95</td><td>4.95</td></tr>              <tr><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td><td><strong>14.85</strong></td></tr>
+      
+      <tr class="odd">
+      <td>Tropical Citrus</td><td><?php echo $o->item_1_count;?></td>
+      <td><?php echo $o->item_1_price;?></td>
+      <td><?php $t = $o->item_1_count * $o->item_1_price; $total += $t; echo $t;?></td></tr>
+      
+      <tr class="even">
+      <td>Lemonade</td>
+      <td><?php echo $o->item_2_count;?></td>
+      <td><?php echo $o->item_2_price;?></td>
+      <td><?php $t = $o->item_2_count * $o->item_2_price; $total += $t; echo $t;?></td></tr>
+      
+      <tr class="odd">
+      <td>Dragonfruit</td>
+      <td><?php echo $o->item_3_count;?></td>
+      <td><?php echo $o->item_3_price;?></td>
+      <td><?php $t = $o->item_3_count * $o->item_3_price; $total += $t; echo $t;?></td></tr>              <tr><td>&nbsp;</td><td>&nbsp;</td><td><strong>Total</strong></td><td><strong><?php echo $total;?></strong></td></tr>
 
     </table>
     <hr>
